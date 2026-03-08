@@ -1,0 +1,1 @@
+import React from "react"; export const FaqSection: React.FC<{data?: any}> = ({data}) => React.createElement("div", {className: "py-20"}, data?.title || "FAQ");

@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Manrope:wght@200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 11%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 38 92% 45%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 38 92% 50%;
+    --radius: 0.5rem;
+  }
+
+  .theme-luxury-light {
+    --background: 40 33% 97%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 40 33% 94%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 40 33% 90%;
+    --muted-foreground: 215 14% 34%;
+    --border: 40 20% 85%;
+  }
+
+  .theme-christmas {
+    --primary: 350 80% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 145 63% 25%;
+    --background: 145 40% 8%;
+    --accent: 350 80% 40%;
+  }
+
+  .theme-summer {
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 24 95% 53%;
+    --background: 48 100% 96%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --border: 214 32% 91%;
+  }
+
+  .theme-black-friday {
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 38 92% 50%;
+    --background: 0 0% 5%;
+  }
+
+  .theme-mediterranean {
+    --primary: 201 96% 32%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 93% 47%;
+    --background: 45 47% 95%;
+    --foreground: 210 34% 27%;
+    --card: 0 0% 100%;
+    --border: 40 15% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Manrope', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-playfair {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+  
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+
+  .decoration-snowflakes {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' font-size='20' fill='white' opacity='0.1' text-anchor='middle' dominant-baseline='middle'%3E❄%3C/text%3E%3C/svg%3E");
+    background-size: 100px 100px;
+    animation: snowfall 20s linear infinite;
+  }
+  
+  .effect-flash {
+    animation: flash 1s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes snowfall {
+  from { background-position: 0 0; }
+  to { background-position: 100px 100px; }
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.prose-editor {
+  @apply max-w-none;
+}
+
+.block-wrapper {
+  @apply relative transition-all duration-200;
+}
+
+.block-wrapper:hover {
+  @apply ring-2 ring-amber-500/50;
+}
+
+.block-wrapper.selected {
+  @apply ring-2 ring-amber-500;
+}
+
+.drag-handle {
+  @apply cursor-grab active:cursor-grabbing;
+}
+
+.dragging {
+  @apply opacity-50 scale-105;
+}
+
+.drop-indicator {
+  @apply h-1 bg-amber-500 rounded-full my-2;
+}

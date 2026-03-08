@@ -6,6 +6,19 @@ frontend_backup/node_modules/
 # Build outputs
 frontend/build/
 frontend_backup/build/
+apps/web/dist/
+apps/web/node_modules/
+frontend/dist/
+functions/node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.pytest_cache/
 
 # Environment files
 .env

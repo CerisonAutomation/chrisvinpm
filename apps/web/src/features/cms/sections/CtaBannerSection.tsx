@@ -1,0 +1,1 @@
+import React from "react"; export const CtaBannerSection: React.FC<{data?: any}> = ({data}) => React.createElement("div", {className: "py-20 text-center"}, data?.title || "CTA Banner");

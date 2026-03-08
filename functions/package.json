@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@fastify/cors": "^11.2.0",
+    "@fastify/helmet": "^13.0.2",
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.13.6",
+    "dotenv": "^17.3.1",
+    "fastify": "^5.8.1",
+    "firebase-admin": "^13.7.0",
+    "firebase-functions": "^7.1.0",
+    "zod": "^4.3.6"
+  }
+}
