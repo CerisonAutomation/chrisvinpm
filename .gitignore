@@ -1,43 +1,52 @@
-# Dependencies
-node_modules/
-frontend/node_modules/
-frontend_backup/node_modules/
-
-# Build outputs
-frontend/build/
-frontend_backup/build/
-apps/web/dist/
-apps/web/node_modules/
-frontend/dist/
-functions/node_modules/
-
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-*.egg-info/
-.pytest_cache/
-
-# Environment files
+# ── Secrets — NEVER commit these ──────────────────────────────────
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+.firebaserc.local
 
-# IDE
-.idea/
-.vscode/
-*.swp
+# ── Dependencies ─────────────────────────────────────────────
+node_modules/
 
-# OS
-.DS_Store
-Thumbs.db
+# ── Build outputs ──────────────────────────────────────────
+dist/
+build/
+.next/
+/out/
+functions/lib/
 
-# Logs
+# ── Firebase ───────────────────────────────────────────────
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# ── Logs ───────────────────────────────────────────────────
 *.log
 npm-debug.log*
+yarn-debug.log*
 
-# Secrets
-*.pem
-credentials.json
+# ── TypeScript ─────────────────────────────────────────────
+*.tsbuildinfo
+
+# ── Testing ───────────────────────────────────────────────
+/coverage
+playwright-report/
+test-results/
+
+# ── OS ─────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── AI agent artefacts ─────────────────────────────────
+.claude
+.z-ai-config
+tool-results/
+agent-ctx/
+.agents/

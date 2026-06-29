@@ -1,29 +1,58 @@
 # Christiano Vincenti Property Management
 
-**Luxury Malta property management platform** — full-stack web platform for managing luxury accommodation listings, guest bookings, and property operations in Malta.
+> Luxury Malta vacation rental platform — full-stack monorepo with Firebase backend, Guesty PMS integration, and React frontend.
 
----
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript) ![Firebase](https://img.shields.io/badge/Firebase-backend-FFCA28?logo=firebase) ![React](https://img.shields.io/badge/React-frontend-61DAFB?logo=react)
 
 ## What it does
 
-- Luxury accommodation showcase and guest-facing booking interface
-- Property management dashboard for operations team
-- Booking management and reservation handling
-- Guest communication and operational workflows
-- Responsive, premium UI for a high-end property brand
+End-to-end property management and direct-booking platform for luxury Malta accommodations. Guests can browse properties, check availability, and book directly. Owners get a management portal. The backend syncs with Guesty PMS for reservation management.
 
----
+## Architecture
+
+Monorepo with clearly separated concerns:
+
+```
+apps/         # Frontend applications
+backend/      # Backend services
+frontend/     # Main guest-facing React app
+functions/    # Firebase Cloud Functions
+packages/     # Shared packages
+```
 
 ## Stack
 
+| Layer | Technology |
+|---|---|
+| Frontend | React + TypeScript |
+| Backend | Firebase (Firestore + Cloud Functions) |
+| Auth | Firebase Auth |
+| Database | Firestore |
+| Storage | Firebase Storage |
+| PMS | Guesty Open API |
+| Hosting | Firebase Hosting |
+
+## Getting Started
+
+```bash
+# Install
+bun install
+
+# Configure environment
+cp .env.example .env.local
+
+# Start Firebase emulators
+firebase emulators:start
+
+# Start dev server
+bun dev
 ```
-Frontend    TypeScript · React · shadcn/ui · Tailwind CSS
-Backend     Supabase · PostgreSQL · REST APIs
-Automation  Webhook integrations · Booking workflow automation
-```
+
+## Security Rules
+
+- `firestore.rules` — Firestore read/write access rules
+- `storage.rules` — Firebase Storage access rules
 
 ---
 
-## Built by
-
-> [Cerison Brown](https://github.com/CerisonAutomation) — Automation Engineer specialising in property ops automation, workflow engineering, and systems integration.
+Built by [Cerison Automation](https://github.com/CerisonAutomation) · Malta 🇲🇹
